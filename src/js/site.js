@@ -3,12 +3,12 @@ import ProductCartItem from "../components/ProductCartItem";
 import { QuantityProvider } from "../components/QuantityContext";
 
 export function addProductToCart(item) {
-    const rawData = localStorage.getItem("cart_shop_fashion");
+    const rawData = localStorage.getItem("cart_shop_");
     var localCart = [];
     if (rawData === undefined) {
         localCart.push({ ...item, quantity: 1 });
     } else {
-        localCart = JSON.parse(localStorage.getItem("cart_shop_fashion")) || [];
+        localCart = JSON.parse(localStorage.getItem("cart_shop_")) || [];
     }
     const existProductIndex = localCart.findIndex((product) => product.id === item.id);
     if (existProductIndex !== -1) {
@@ -20,7 +20,7 @@ export function addProductToCart(item) {
     } else {
         localCart.push({ ...item, quantity: 1 });
     }
-    localStorage.setItem("cart_shop_fashion", JSON.stringify(localCart));
+    localStorage.setItem("cart_shop_", JSON.stringify(localCart));
     return true;
 }
 export function getTotalPriceCart(localCart) {
@@ -35,35 +35,35 @@ export function updateQuantityProductCartByID(id, newValue) {
     var localCart = getProductFromCart();
     const index = localCart.findIndex((p) => p.id === id)
     localCart[index].quantity = newValue;
-    localStorage.setItem("cart_shop_fashion", JSON.stringify(localCart));
+    localStorage.setItem("cart_shop_", JSON.stringify(localCart));
 }
 export function getProductFromCart() {
-    const rawData = localStorage.getItem("cart_shop_fashion") || "null";
+    const rawData = localStorage.getItem("cart_shop_") || "null";
     var localCart = [];
     if (rawData === "null") {
         return "NONE"
     } else {
-        localCart = JSON.parse(localStorage.getItem("cart_shop_fashion")) || [];
+        localCart = JSON.parse(localStorage.getItem("cart_shop_")) || [];
     }
     return localCart;
 }
 export function getLengthCart() {
-    const rawData = localStorage.getItem("cart_shop_fashion") || "null";
+    const rawData = localStorage.getItem("cart_shop_") || "null";
     if (rawData !== "null") {
-        return JSON.parse(localStorage.getItem("cart_shop_fashion")).length;
+        return JSON.parse(localStorage.getItem("cart_shop_")).length;
     } else {
         return 0;
     }
 }
 export function removeProductFromCart(id) {
-    const rawData = localStorage.getItem("cart_shop_fashion") || "null";
+    const rawData = localStorage.getItem("cart_shop_") || "null";
     var localCart = [];
     if (rawData !== "null") {
-        localCart = JSON.parse(localStorage.getItem("cart_shop_fashion")) || [];
+        localCart = JSON.parse(localStorage.getItem("cart_shop_")) || [];
         localCart.map((product, index) => {
             if (product.id === id) {
                 localCart.pop(index, undefined)
-                localStorage.setItem("cart_shop_fashion", JSON.stringify(localCart));
+                localStorage.setItem("cart_shop_", JSON.stringify(localCart));
                 window.location.reload();
             }
         })

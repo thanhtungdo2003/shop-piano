@@ -55,7 +55,7 @@ function AccountLayout() {
             }, { withCredentials: true }).then(res=>{
                 toast.success("Đăng nhập thành công!", { position: "top-right" });
                 const user = res.data;
-                localStorage.setItem('shop-fashion-user-data', JSON.stringify(user));
+                localStorage.setItem('shop-user-data', JSON.stringify(user));
                 nav('/');
             }).catch(err=>{
                 toast.error(err.response.data.message, { position: "top-right" });

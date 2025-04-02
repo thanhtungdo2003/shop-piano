@@ -18,7 +18,7 @@ function OrderPage() {
     const nav = useNavigate();
     useEffect(() => {
         try {
-            const localUserData = localStorage.getItem("shop-fashion-user-data");
+            const localUserData = localStorage.getItem("shop-user-data");
             if (localUserData) {
                 const user = JSON.parse(localUserData);
                 setUserData(user);
@@ -75,7 +75,7 @@ function OrderPage() {
         if (paymethod === "default") {
             axios.post(getUri() + "/order/create", reqData).then(res => {
                 toast.success("Tạo đơn hàng thành công!", { position: "top-right" });
-                localStorage.removeItem("cart_shop_fashion");
+                localStorage.removeItem("cart_shop_");
                 setTimeout(() => {
                     nav("/");
                 }, 1000);
@@ -85,7 +85,7 @@ function OrderPage() {
         } else if (paymethod === "momo") {
             axios.post(getUri() + "/order/create-with-momo", reqData).then(res => {
                 toast.success("Tạo đơn hàng thành công!", { position: "top-right" });
-                localStorage.removeItem("cart_shop_fashion");
+                localStorage.removeItem("cart_shop_");
                 setTimeout(() => {
                     window.open(res.data.payUrl, "_blank");
                     nav("/")

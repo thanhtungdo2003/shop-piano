@@ -82,12 +82,12 @@ function MainLayout() {
             })
     }, [])
     useEffect(() => {
-        const rawUser = localStorage.getItem('shop-fashion-user-data');
+        const rawUser = localStorage.getItem('shop-user-data');
         if (rawUser) {
             axios.post("http://localhost:3000/api/user/auth", {}, { withCredentials: true }).then((res) => {
                 if (res.status === 200) {
                     const userData = res.data.user;
-                    localStorage.setItem('shop-fashion-user-data', JSON.stringify(userData));
+                    localStorage.setItem('shop-user-data', JSON.stringify(userData));
                     setAccountNav(<>
                         <div className="user-nav" style={{ margin: "auto 10px", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", position: "relative" }}>
                             
