@@ -30,7 +30,8 @@ function ChildProductImg({images}) {
         isDragging = false;
     };
     return (
-        <div style={{ width: "90%", margin: "auto", overflow: "hidden", position: "relative", borderRadius: "6px", display:"flex", flexDirection:"column", gap:"10px" }}>
+        <>
+        <div style={{ flex:"5", overflow: "hidden", position: "relative", borderRadius: "6px" }}>
 
             <div
                 ref={slideRef}
@@ -38,6 +39,7 @@ function ChildProductImg({images}) {
                     display: "flex",
                     transition: "transform 0.5s",
                     transform: `translateX(-${index * 100}%)`,
+                    flex:"5",
                 }}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
@@ -45,20 +47,25 @@ function ChildProductImg({images}) {
                 {images.map((img, i) => (
                     <img key={i} src={"http://localhost:3000/api/product/get-imgs/product_imgs/"+img.split('-')[1]} alt={`slide-${i}`} style={{ width: "100%", height: "100%", flexShrink: 0, objectFit: 'contain', userSelect: 'none' }} />
                 ))}
+              
             </div>
             <Button onClick={prevSlide} style={{ position: "absolute", left: "10px", top: "27%", backgroundColor:"rgba(0,0,0,0)" }}><img style={{ width: "30px", height:"30px" }} src={leftArrowIcon} /></Button>
             <Button onClick={nextSlide} style={{ position: "absolute", right: "10px", top: "27%", backgroundColor:"rgba(0,0,0,0)" }}><img style={{ width: "30px" }} src={rightArrowIcon} /></Button>
-            <div className="child-img-container">
-                {images.map((_, i) => (
-                    <img
-                        key={i}
-                        className={`child-img ${index === i ? "active" : ""}`}
-                        onClick={() => setIndex(i)}
-                        src={"http://localhost:3000/api/product/get-imgs/product_imgs/"+images[i].split('-')[1]}
-                    />
-                ))}
-            </div>
+            
         </div>
+        <div className="child-img-container" style={{
+            flex:"1"
+        }}>
+            {images.map((_, i) => (
+                <img
+                    key={i}
+                    className={`child-img ${index === i ? "active" : ""}`}
+                    onClick={() => setIndex(i)}
+                    src={"http://localhost:3000/api/product/get-imgs/product_imgs/"+images[i].split('-')[1]}
+                />
+            ))}
+        </div>
+        </>
     );
 }
 

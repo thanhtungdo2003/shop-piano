@@ -14,9 +14,7 @@ function CartLayout() {
     const [finalPrice, setFinalPrice] = useState(0);
     const [cartItems, setCartItems] = useState([]); // State để lưu danh sách sản phẩm
     const [click, onCLick] = useState(0);
-    useEffect(() => {
-        window.scrollTo({ top: 800, behavior: "smooth" });
-      }, []);
+    
     useEffect(() => {
         let isMounted = true; // Biến để kiểm tra component có còn mounted không
 
@@ -101,12 +99,9 @@ function CartLayout() {
                     </div>
                 </div>
                 <div className="cart-summary-container">
-                    <div style={{ maxWidth: "100%", padding: "5px", backgroundColor: "rgb(16, 16, 16)", color: "white" }}>
-                        Thông tin thanh toán
-                    </div>
-
+                  
+                    
                     <div className="summary-info">
-                    <p className="form-title">chi tiết tiền hàng</p>
 
                         <div className="summary-item">
                             <p>Tổng tiền hàng: </p><p>{totalprice ? (totalprice).toLocaleString('de-DE') : 0} đ</p>

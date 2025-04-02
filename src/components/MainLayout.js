@@ -181,7 +181,8 @@ function MainLayout() {
                                                 </div>
                                             </li>
                                             <li><a href="/product">SẢN PHẨM</a></li>
-                                            <li><a>BLOG</a></li>
+                                            <li><a href="/product">SẢN PHẨM MỚI</a></li>
+                                            <li><a href="/product">SẢN PHẨM ĐANG HOT</a></li>
                                         </ul>
                                     </div>
                                     <div className="nav-right">
@@ -202,7 +203,6 @@ function MainLayout() {
                         <ShopFooter />
                     </footer>
                     <div className="contacts-container">
-                        <PhoneCall size="auto" color="white" />
                         <div className="contact-item facebook">
                             <Facebook size="auto" color="white" />
                         </div>
