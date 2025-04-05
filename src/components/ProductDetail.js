@@ -87,7 +87,7 @@ function ProductDetail() {
     return (
         <>
             <div className="detail-container">
-                <div className="imgs-container">
+                <div className="imgs-container" >
                     <ChildProductImg images={JSON.parse(productData.product_imgs)} />
                 </div>
                 <div className="info-container">
