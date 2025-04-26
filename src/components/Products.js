@@ -40,9 +40,9 @@ function ProductsPage() {
     return (
         <>
             <ToastContainer />
-            <div style={{ position: "sticky", top: "70px", maxWidth: "100%", height: "40px", backgroundColor: "rgba(1, 1, 1, 0.6)", backdropFilter: "blur(10px)", display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ position: "sticky", zIndex: "9999", top: "70px", maxWidth: "100%", height: "40px", backgroundColor: "rgba(1, 1, 1, 0.6)", backdropFilter: "blur(10px)", display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
                 <div className="product-show-option-container" style={{ display: "flex", width: "75%", height: "40px", alignItems: "center", gap: "7px" }}>
-                    <p style={{color:"white"}}>Sắp xếp theo</p>
+                    <p style={{ color: "white" }}>Sắp xếp theo</p>
                     <button>Phổ biến</button>
                     <button>Mới nhất</button>
                     <button>Bán chạy</button>
@@ -71,7 +71,7 @@ function ProductsPage() {
                     </div>
                 </div>
                 <div className="page-control-container">
-                    <p style={{color:"white"}}>{page}</p>
+                    <p style={{ color: "white" }}>{page}</p>
                     <div>
                         <button disabled={page === 1} onClick={() => {
                             setPage(page - 1)

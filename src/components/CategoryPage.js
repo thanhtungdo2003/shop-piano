@@ -28,7 +28,7 @@ function CategoryPage() {
             category_slug: categorySlug,
             sort: sortType,
             get_type: "user"
-        }, {withCredentials:true})
+        }, { withCredentials: true })
             .then((res) => {
                 if (!res.data) return <></>;
                 const productsDatas = res.data;
@@ -38,7 +38,7 @@ function CategoryPage() {
 
     return (
         <>
-            <div style={{ position: "sticky", top: "70px", maxWidth: "100%", height: "40px", backgroundColor: "rgba(1, 1, 1, 0.63)", backdropFilter: "blur(10px)", display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ position: "sticky", zIndex: "9999", top: "70px", maxWidth: "100%", height: "40px", backgroundColor: "rgba(1, 1, 1, 0.63)", backdropFilter: "blur(10px)", display: "flex", padding: "10px", alignItems: "center", justifyContent: "space-between" }}>
                 <div className="product-show-option-container" style={{ display: "flex", width: "75%", height: "40px", alignItems: "center", gap: "7px" }}>
                     <p color="white">Sắp xếp theo</p>
                     <button>Phổ biến</button>

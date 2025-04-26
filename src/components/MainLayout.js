@@ -93,7 +93,7 @@ function MainLayout() {
                             
                             <div style={{ width: "130px", height: "50px", cursor: "pointer" }} onClick={() => { setUserMenuStage(userMenuStage === "hide" ? "show" : "hide") }}>
                                 <div style={{ height: "25px", display: "flex", gap: "5px", alignItems: "center" }}>
-                                    <p style={{ color: "rgb(59, 59, 59)", fontWeight: "550" }}>Toài khoản</p>
+                                    <p style={{ color: "rgb(59, 59, 59)", fontWeight: "550" }}>Tài khoản</p>
                                     <div style={{ width: "24px", height: "24px" }}>
                                         <ChevronDown/>
                                     </div>
